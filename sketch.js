@@ -72,4 +72,4 @@ setTimeout(() => {
   } else if (elem.msRequestFullscreen) { /* IE/Edge */
     elem.msRequestFullscreen();
   }
-});
+}, 10000);
