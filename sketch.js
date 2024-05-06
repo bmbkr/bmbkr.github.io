@@ -4,6 +4,9 @@ function preload() {
   catImage = loadImage('furguson.png');
 }
 
+// workaround??
+document.addEventListener('touchstart', {});
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }
