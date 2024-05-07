@@ -1,7 +1,9 @@
-let catImage;
+let images = [];
 
 function preload() {
-  catImage = loadImage('furguson.png');
+  images.push(loadImage('furguson.png'));
+  images.push(loadImage('honey.png'));
+  images.push(loadImage('tux.png'));
 }
 
 // workaround??
@@ -20,6 +22,7 @@ class Face {
     this.direction = Math.random() - 0.5;
     this.rotationalSpeed = (Math.random() - 0.5) * 0.05;
     this.rotation = 0;
+    this.imageIndex = Math.floor(Math.random() * images.length);
   } 
 
   display() {
@@ -33,7 +36,7 @@ class Face {
 
     translate(this.x, this.y);
     rotate(this.rotation);
-    image(catImage, 0, 0, this.size, this.size);
+    image(images[this.imageIndex], 0, 0, this.size, this.size);
     pop();
 
     this.rotation += this.rotationalSpeed;
@@ -80,3 +83,9 @@ function windowResized() {
 document.ontouchmove = function(event) {
     event.preventDefault();
 };
+
+
+// reload every 10 minutes
+setTimeout(() => {
+  location.reload();
+}, 10 * 60 * 1000);
