@@ -20,7 +20,7 @@ class Face {
     this.y = -this.size;
     this.speed = Math.random() * 3 + 1;
     this.direction = Math.random() - 0.5;
-    this.rotationalSpeed = (Math.random() - 0.5) * 0.05;
+    this.rotationalSpeed = (Math.random() - 0.5) * 0.1;
     this.rotation = 0;
     this.imageIndex = Math.floor(Math.random() * images.length);
   } 
@@ -50,11 +50,13 @@ class Face {
 const faces = [];
 
 function draw() {
-  background(0);
+  background(0, 0, 0, 8);
 
   if (frameCount % 10 === 0) {
     faces.push(new Face());
   }
+
+  // filter(BLUR, 2);
 
   faces.forEach(face => face.display());
 
