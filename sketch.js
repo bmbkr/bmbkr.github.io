@@ -3,7 +3,6 @@ let images = [];
 function preload() {
   images.push(loadImage('furguson.png'));
   images.push(loadImage('honey.png'));
-  images.push(loadImage('tux.png'));
 }
 
 // workaround??
